@@ -18,8 +18,6 @@ def mostrar_menu() -> None:
     print("[6] REGIONES CON MAS DE 3000 VENTAS")
     print("[7] REGIONES POR ENCIMA DEL PROMEDIO")
     print("[8] REGION/ES MAS COMPRADORA/S")
-    print("[9] HARDCODEAR VECTOR")
-    print("[10] ORDENAR REGIONES ALFABETICAMENTE")
     print("[0] SALIR")
 
 
@@ -30,19 +28,13 @@ def ejecutar_menu() -> None:
     salir = False
     while not salir:
         mostrar_menu()
-        opcion = pedir_opcion(0, 10)
+        opcion = pedir_opcion(0, 8)
         if opcion == 0:
-            print("Hasta luego.")
+            print("Chau")
             salir = True
         elif opcion == 1:
             ventas = carga_secuencial(CANTIDAD_REGIONES)
             hay_datos = True
-        elif opcion == 9:
-            ventas = [1800, 555, 2333, 1850, 3999, 777, 1410, 7180, 2500, 60]
-            hay_datos = True
-            print("Vector reemplazado por los datos hardcodeados.")
-        elif opcion == 10:
-            print("Esa opcion todavia no esta implementada.")
         elif hay_datos == False:
             print("Error: primero tenes que cargar las ventas (opcion 1).")
         elif opcion == 2:
